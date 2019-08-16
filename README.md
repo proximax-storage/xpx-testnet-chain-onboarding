@@ -27,3 +27,10 @@ Go ahead and standup this box in your local machine:
 vagrant up
 ```
 
+SSH into your local VM using command:
+```
+vagrant ssh
+```
+
+
+
