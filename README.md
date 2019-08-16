@@ -34,3 +34,30 @@ vagrant ssh
 
 
 
+## Running the Peer node container inside the VM
+
+
+Once inside the VM, navigate to the core directory of the Sirius blockchain and initialize the Peer container:
+```
+cd /opt/catapult-config/
+sudo docker-compose -d up
+
+
+```
+
+Inspect the current running docker container of Peer node:
+```
+sudo docker ps
+```
+
+Expect to see the following output:
+```
+CONTAINER ID        IMAGE                                                                                       COMMAND                  CREATED             STATUS              PORTS                              NAMES
+XXXXX        249767383774.dkr.ecr.ap-southeast-1.amazonaws.com/proximax-catapult-server:release-v0.4.0   "/catapult/bin/siriu…"   6 seconds ago       Up 4 seconds        0.0.0.0:7900-7902->7900-7902/tcp   catapult-config_catapult_1
+```
+
+As you can see above, there is a running container inside your VM, with ContainerID "XXXXX"
+
+
+
+
