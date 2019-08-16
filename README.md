@@ -57,7 +57,26 @@ XXXXX        249767383774.dkr.ecr.ap-southeast-1.amazonaws.com/proximax-catapult
 ```
 
 As you can see above, there is a running container inside your VM, with ContainerID "XXXXX"
+At this point, you can watch the "default" blockchain harvesting behaviour of our Proximax Testnet by using command:
+```
+
+sudo docker logs -f <containerID>
+```
 
 
+
+...and expect to see logs like this:
+```
+
+(disruptor::ConsumerDispatcher.cpp@43) completing processing of element 22 (3 blocks (heights 10725 - 10727) [FBD6794A] from Remote_Pull), last consumer is 0 elements behind 
+```
+
+
+Take note of the "heights" statement in the logs, which shows that the blockchain creates new blocks every 15 seconds (by default).
+
+
+
+
+ 
 
 
