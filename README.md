@@ -3,6 +3,11 @@ This is for developing the Vagrant distribution for a community-available Sirius
 
 ## Prework Instructions for the community
 
+### Install Vagrant on your local machine
+In order to run the vagrant distribution, its a prerequisite to install vagrant first.
+
+Access the installation steps [here](https://www.vagrantup.com/intro/getting-started/install.html)
+
 ### Download the community-oriented vagrant box for Sirius Peer Node
 This will download a community peer based on Proximax Sirius Peer v0.4.0:
 
