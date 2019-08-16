@@ -1,4 +1,4 @@
-# vagrant-community-sirius-peernode
+# vagrant-testnet-sirius-peernode
 This is for developing the Vagrant distribution for a community-available Sirius Blockchain Peer.  This deployable  Peer automatically hooks-up to Public Testnet.
 
 ## Prework Instructions for the community
