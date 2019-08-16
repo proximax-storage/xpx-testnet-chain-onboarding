@@ -20,6 +20,8 @@ vagrant init proximax-community-peer
 ```
 
 At this point, you will have a new Vagrantfile in your current DIR.
+
+
 Go ahead and standup this box in your local machine:
 ```
 vagrant up
