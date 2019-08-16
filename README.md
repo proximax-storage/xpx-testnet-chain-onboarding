@@ -7,14 +7,21 @@ This is for developing the Vagrant distribution for a community-available Sirius
 This will download a community peer based on Proximax Sirius Peer v0.4.0:
 
 ```
+mkdir -m 777 ~/proximax-peer
+cd ~/proximax-peer
 wget http://3.18.104.76:8000/proximax-sirius-v0.4.0.box
 ```
 
 
-Once downloaded, setup your vagrant environment to point to the boxfile:
+Once download completes, setup your vagrant environment to point to the boxfile, then initiatize it:
 ```
-vagrant box add proximax-community-peer proximax-sirius-v0.4.0.box 
+vagrant box add proximax-community-peer proximax-sirius-v0.4.0.box
+vagrant init proximax-community-peer
 ```
 
-
+At this point, you will have a new Vagrantfile in your current DIR.
+Go ahead and standup this box in your local machine:
+```
+vagrant up
+```
 
