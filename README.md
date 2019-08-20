@@ -7,7 +7,7 @@ This readme contains the official ProximaX instructions on the the Vagrant distr
 ### Local Network requirements
 Ensure that your local network can allow inbound/outbound comms on these ports:
 ```
-Notice: For correct work of node, you need to open the follow ports:
+
     3000tcp
     7900tcp
     7901tcp
