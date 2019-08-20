@@ -54,7 +54,7 @@ vagrant ssh
 
 
 
-## Running the Peer node container inside the VM
+## Running the Peer node daemon inside the VM
 
 
 Once inside the VM, you will notice that Nodekeys are automatically generated for you:
