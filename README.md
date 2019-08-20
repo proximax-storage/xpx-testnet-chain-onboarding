@@ -16,7 +16,7 @@ Ensure that your local network can allow inbound/outbound comms on these ports:
 
 
 ### System Requirements
-The Sirius Blokchain Peer is designed to work with minimum perfomance 1 CPU core and 2GB RAM, so your Vagrant VM must have these minimum resource specs.
+The Sirius Blokchain Peer is designed to work with minimum perfomance on   1 CPU core and 2GB RAM, so your Vagrant VM must have these minimum resource specs.
 
 ### Install Vagrant on your local machine
 In order to run the vagrant distribution, its a prerequisite to install vagrant first.
