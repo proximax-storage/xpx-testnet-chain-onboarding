@@ -3,6 +3,21 @@ This readme contains the official ProximaX instructions on the the Vagrant distr
 
 ## Prework Instructions for the community
 
+
+### Local Network requirements
+Ensure that your local network can allow inbound/outbound comms on these ports:
+```
+Notice: For correct work of node, you need to open the follow ports:
+    3000tcp
+    7900tcp
+    7901tcp
+    7902tcp
+```
+
+
+### System Requirements
+The Sirius Blokchain Peer is designed to work with minimum perfomance 1 CPU core and 2GB RAM, so your Vagrant VM must have these minimum resource specs.
+
 ### Install Vagrant on your local machine
 In order to run the vagrant distribution, its a prerequisite to install vagrant first.
 
