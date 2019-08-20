@@ -192,7 +192,7 @@ TS OFFSET DIR : 0
 SUCCESS PINGS : 0
       READERS : 0
         TASKS : 12 
-2019-08-20 10:29:35.938668 0x00007f723fa60700: <warning> (src::TimeSynchronizer.cpp@62) no synchronization samples available to calculate network time 
+
 2019-08-20 10:29:37.009770 0x00007f722d0ab700: <info> (disruptor::ConsumerDispatcher.cpp@43) completing processing of element 5 (400 blocks (heights 19602 - 20001) [862C1F55] from Remote_Pull), last consumer is 0 elements behind 
 2019-08-20 10:29:39.896084 0x00007f723fa60700: <info> (ionet::PacketSocket.cpp@450) connected to XXXX [XXXX:7900]
 ```
