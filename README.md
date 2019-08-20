@@ -121,12 +121,24 @@ vagrant@vagrant:~$
 
 ```
 
-### Start the Sirius Peer Daemon:
+
+
+
+
+
+
+### Start the Sirius Peer Daemon
 This VM comes pre-installed with the Debian Binary of the Sirius Blockchain Peer.  The executable is already in the bin folder.  Go ahead and start the Sirius daemon:
 
 ```
 sudo sirius.bc /etc/sirius/chain/
 ```
+
+
+
+
+
+
 
 
 
