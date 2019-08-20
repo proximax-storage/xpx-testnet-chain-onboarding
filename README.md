@@ -26,7 +26,7 @@ Access the installation steps [here](https://www.vagrantup.com/intro/getting-sta
 ### Download the community-oriented vagrant box for Sirius Peer Node
 This step will show how to download a community peer based on Proximax Sirius Peer v0.4.1:
 
-```
+```bash
 mkdir -m 777 ~/proximax-peer
 cd ~/proximax-peer
 wget http://3.18.104.76:8000/proximax-sirius-v0.4.1.box
@@ -34,7 +34,7 @@ wget http://3.18.104.76:8000/proximax-sirius-v0.4.1.box
 
 
 Once download completes, setup your vagrant environment to point to the boxfile, then initiatize it:
-```
+```bash
 vagrant box add proximax-community-peer proximax-sirius-v0.4.1.box
 vagrant init proximax-community-peer
 ```
@@ -43,12 +43,12 @@ At this point, you will have a new Vagrantfile in your current DIR.
 
 
 Go ahead and standup this box in your local machine:
-```
+```bash
 vagrant up
 ```
 
 SSH into your local VM using command:
-```
+```bash
 vagrant ssh
 ```
 
@@ -58,7 +58,7 @@ vagrant ssh
 
 
 Once inside the VM, you will notice that Nodekeys are automatically generated for you:
-```
+```bash
 $ vagrant ssh
 Welcome to Ubuntu 19.04 (GNU/Linux 5.0.0-17-generic x86_64)
 
@@ -91,7 +91,7 @@ vagrant@vagrant:~$
 ```
 
 Inspect the path of the config files of your Sirius Peer Node (located in path /etc/sirius/chain/resources/) :
-```
+```bash
 
 vagrant@vagrant:~$ ls -la /etc/sirius/chain/resources/
 total 88
@@ -130,7 +130,7 @@ vagrant@vagrant:~$
 ### Start the Sirius Peer Daemon
 This VM comes pre-installed with the Debian Binary of the Sirius Blockchain Peer.  The executable is already in the bin folder.  Go ahead and start the Sirius daemon:
 
-```
+```bash
 sudo sirius.bc /etc/sirius/chain/
 ```
 
@@ -144,7 +144,7 @@ sudo sirius.bc /etc/sirius/chain/
 
 ### Marvel at the chain's behaviour
 Once executed, you can easily witness a new chain will be created every 15 seconds by default and the log entry looks like this:
-```
+```bash
 
 
 2019-08-20 10:29:31.094175 0x00007f723fa60700: <info> (chain::RemoteApiForwarder.h@66) completed 'synchronizer task' (api2uswest2 @ XXXX:7900) with result Success 
