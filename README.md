@@ -90,6 +90,9 @@ vagrant@vagrant:~$
 
 ```
 
+
+
+### Sirius BlockChain Config Files
 Inspect the path of the config files of your Sirius Peer Node (located in path /etc/sirius/chain/resources/) :
 ```bash
 
