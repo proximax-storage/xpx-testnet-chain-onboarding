@@ -23,20 +23,20 @@ In order to run the vagrant distribution, its a prerequisite to install vagrant 
 
 Access the installation steps [here](https://www.vagrantup.com/intro/getting-started/install.html)
 
-### Download the community-oriented vagrant box for Sirius Peer Node
+### Download the community-oriented vagrant box for Sirius Peer Node v2
 This step will show how to download a community peer based on Proximax Sirius Peer v0.4.1:
 
 ```bash
-mkdir -m 777 ~/proximax-peer
-cd ~/proximax-peer
-wget http://3.18.104.76:8000/proximax-sirius-v0.4.1.box
+mkdir -m 777 ~/proximax-peer-v2
+cd ~/proximax-peer-v2
+wget https://proximax-vagrant-storage.s3-ap-southeast-1.amazonaws.com/proximax-sirius-v0.4.1-2.box
 ```
 
 
 Once download completes, setup your vagrant environment to point to the boxfile, then initiatize it:
 ```bash
-vagrant box add proximax-community-peer proximax-sirius-v0.4.1.box
-vagrant init proximax-community-peer
+vagrant box add proximax-community-peer-v2 proximax-sirius-v0.4.1-2.box
+vagrant init proximax-community-peer-v2
 ```
 
 At this point, you will have a new Vagrantfile in your current DIR.

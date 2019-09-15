@@ -1,0 +1,45 @@
+#-------------------------
+# Ansible template
+#-------------------------
+*.retry
+
+#-------------------------
+# Terraform template
+#-------------------------
+**/.terraform/*
+terraform/.terraform/*
+*.tfstate
+*.tfstate.*
+
+#-------------------------
+# Packer template
+#-------------------------
+packer_cache/
+
+# For built boxes
+*.box
+#-------------------------
+# Vagrant template
+#-------------------------
+# General
+.vagrant/
+**/*.log
+
+#-------------------------
+# IntelliJ project files
+#-------------------------
+.idea
+**/*.iml
+out
+gen
+
+#-------------------------
+# General
+#-------------------------
+.DS_Store
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
