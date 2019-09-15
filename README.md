@@ -24,7 +24,7 @@ In order to run the vagrant distribution, its a prerequisite to install vagrant 
 Access the installation steps [here](https://www.vagrantup.com/intro/getting-started/install.html)
 
 ### Download the community-oriented vagrant box for Sirius Peer Node v2
-This step will show how to download a community peer based on Proximax Sirius Peer v0.4.1:
+This step will show how to obtain a community peer vagrantbox based on Proximax Sirius Peer v0.4.1:
 
 ```bash
 mkdir -m 777 ~/proximax-peer-v2
