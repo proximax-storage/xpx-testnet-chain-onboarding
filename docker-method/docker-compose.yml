@@ -1,0 +1,13 @@
+version: "3.6"
+services:
+  catapult:
+    image: proximax-sirius-peer-toolless:release-v0.4.3
+    ports:
+      - 7902:7902
+      - 7900:7900
+      - 7901:7901
+    volumes:
+      - /opt/catapult-config:/catapultconfig
+      - /opt/catapult-config/data:/data:rw
+      - /opt/catapult-config/logs:/logs:rw
+    restart: always
