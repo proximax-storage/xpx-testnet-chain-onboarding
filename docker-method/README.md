@@ -92,6 +92,7 @@ REPOSITORY                      TAG                 IMAGE ID
 proximax-sirius-peer-toolless   release-v0.4.3      a23e56f572d1        
 
 ```
+---
 
 
 
@@ -100,18 +101,20 @@ proximax-sirius-peer-toolless   release-v0.4.3      a23e56f572d1
 
 
 
+# Before running Sirius Peer...
+You need to create a Testnet Keypair to serve as your HarvestKey.
 
-### Run the Sirius Peer using the MAINNET configs:
-```bash
+There are two ways to create a harvestKey:
 
-sudo sirius.bc /etc/sirius/chain/mainnet
 
+1. Using BCTESTNET WALLET - [testnetwallet-link](https://bctestnetwallet.xpxsirius.io/)
+
+2. Create an "account" using the ProximaX Sirius SDK - [sdk-link](https://bcdocs.xpxsirius.io/docs/guides/account/creating-and-opening-an-account/)
+
+
+
+Once created, simply put your privateKey harvestKey into configfile:
 ```
-
-
-# Staking?
-Simply put your harvestKey into configfile:
-```
-/etc/sirius/chain/mainnet/resources/config-harvesting.properties
+/opt/catapult-config/resources/config-harvesting.properties
 ```
 
