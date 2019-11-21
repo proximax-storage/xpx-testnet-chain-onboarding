@@ -64,29 +64,40 @@ cp -R public-testnet-peer-package/* /opt/catapult-config
 
 ---
 
-### Load the ProximaX Peer Docker image into local:
+### Load the Public ProximaX Peer Docker image into local:
 ```bash
 
+cd /opt/catapult-config
 sudo docker load -i proximax-sirius-peer-toolless.tar
-a23e56f572d1
-a23e56f572d1
+
 
 ```
-
-
-
-
-
-### Install the Package with APT:
-```bash
-
-sudo apt install ./sirius-chain-0.4.3-2.deb
-
-```
-
-Marvel at how the process installs the dependencies.
 
 ---
+
+
+
+
+
+### Tag your fresh  Docker image with the proper version release:
+```bash
+
+cd /opt/catapult-config
+sudo docker tag a23e56f572d1  proximax-sirius-peer-toolless:release-v0.4.3
+
+
+#check the tagged existence of your Public ProximaX Peer image:
+sudo docker images
+REPOSITORY                      TAG                 IMAGE ID            
+proximax-sirius-peer-toolless   release-v0.4.3      a23e56f572d1        
+
+```
+
+
+
+
+
+
 
 
 
