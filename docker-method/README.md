@@ -20,7 +20,7 @@ Theoretically, this dockerized Sirius Peer package can perform on any Nix OS fla
 
 But if you really need a minimum benchmark, we have seen the  Sirius Blockchain Peer to work with a minimum Hardware perfomance of   1 CPU core and 2GB RAM.
 
-This doc was prepared by testing that package on:
+This doc was prepared by testing the package on:
 ```
 - Debian 10 ++
 - Ubuntu 19.04 ++
@@ -31,7 +31,7 @@ This doc was prepared by testing that package on:
 ### Prework! Obtain the Dependencies
 Setup your node dependencies to properly run the dockerized Sirius Peer.
 
-Feel free to run below commands=.
+Example for an Ubuntu box, run below commands either manually or in script:
 ```bash
 
 #! /bin/bash
