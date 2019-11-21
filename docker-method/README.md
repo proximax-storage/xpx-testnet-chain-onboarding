@@ -24,6 +24,7 @@ This doc was prepared by testing the package on:
 ```
 - Debian 10 ++
 - Ubuntu 19.04 ++
+- CentOS 7 ++
 
 ```
 ---
@@ -49,6 +50,22 @@ sudo apt install docker-ce docker-ce-cli containerd.io -y
 
 ```
 
+Example for a CentOS box, run below commands either manually or in script:
+```bash
+
+#! /bin/bash
+sudo yum update -y
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo yum remove docker docker-common docker-selinux docker-engine-selinux docker-engine docker-ce
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install -y docker-ce docker-ce-cli containerd.io
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
+sudo systemctl status docker.service
+
+```
 
 ### Unpack the docker-compose Package!
 
@@ -57,8 +74,9 @@ sudo mkdir -m 777 /opt/catapult-config
 cd /opt/catapult-config
 wget https://proximax-vagrant-storage.s3-ap-southeast-1.amazonaws.com/public-testnet-peer-dockerpackage.tar.gz
 tar -xvf public-testnet-peer-dockerpackage.tar.gz
+rm -rf public-testnet-peer-dockerpackage.tar.gz
 cp -R public-testnet-peer-package/* /opt/catapult-config
-
+rm -rf public-testnet-peer-package/
 
 ```
 
@@ -69,7 +87,6 @@ cp -R public-testnet-peer-package/* /opt/catapult-config
 
 cd /opt/catapult-config
 sudo docker load -i proximax-sirius-peer-toolless.tar
-
 
 ```
 
@@ -118,7 +135,12 @@ Once created, simply put your privateKey harvestKey into configfile:
 /opt/catapult-config/resources/config-harvesting.properties
 ```
 
+---
 
+You can change the name of the node by changing host and friendlyName parameters:
+```
+/opt/catapult-config/resources/config-node.properties
+```
 
 ---
 
@@ -127,7 +149,7 @@ Once keys are set, execute your peer to sync to Testnet Chain:
 ```bash
 
 cd /opt/catapult-config/
-sudo docker-compose up
+sudo /usr/local/bin/docker-compose up
 
 ```
 
