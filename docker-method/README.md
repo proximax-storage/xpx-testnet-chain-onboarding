@@ -105,16 +105,31 @@ proximax-sirius-peer-toolless   release-v0.4.3      a23e56f572d1
 You need to create a Testnet Keypair to serve as your HarvestKey.
 
 There are two ways to create a harvestKey:
-
+---
 
 1. Using BCTESTNET WALLET - [testnetwallet-link](https://bctestnetwallet.xpxsirius.io/)
 
 2. Create an "account" using the ProximaX Sirius SDK - [sdk-link](https://bcdocs.xpxsirius.io/docs/guides/account/creating-and-opening-an-account/)
 
-
+---
 
 Once created, simply put your privateKey harvestKey into configfile:
 ```
 /opt/catapult-config/resources/config-harvesting.properties
 ```
+
+
+
+---
+
+# Run the dockerized Sirius Peer...
+Once keys are set, execute your peer to sync to Testnet Chain:
+```bash
+
+cd /opt/catapult-config/
+sudo docker-compose up
+
+```
+
+
 
