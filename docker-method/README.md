@@ -132,4 +132,98 @@ sudo docker-compose up
 ```
 
 
+---
+
+
+
+
+
+
+
+### Marvel at the chain's behaviour
+Once executed, you can easily witness a new chain will be created every 15 seconds by default and the SYNC log entry looks like this:
+```bash
+
+
+2019-11-13 11:24:53.662099 0x00007f8828188700: <info> (chain::ChainSynchronizer.cpp@207) peer returned 400 blocks (heights 1202 - 1601) 
+2019-11-13 11:24:53.662605 0x00007f8828188700: <info> (chain::RemoteApiForwarder.h@66) completed 'synchronizer task' (tier1B-mainnet-chain-peer8 @ proioxis.brimstone.xpxsirius.io:7900) with result Success 
+2019-11-13 11:24:53.934271 0x00007f881617a700: <info> (disruptor::ConsumerDispatcher.cpp@43) completing processing of element 3 (400 blocks (heights 1202 - 1601) [CE595B87] from Remote_Pull), last consumer is 0 elements behind 
+2019-11-13 11:24:57.152197 0x00007f8828188700: <info> (chain::ChainSynchronizer.cpp@207) peer returned 400 blocks (heights 1602 - 2001) 
+2019-11-13 11:24:57.152635 0x00007f8828188700: <info> (chain::RemoteApiForwarder.h@66) completed 'synchronizer task' (tier1a-mainnet-chain-peer3 @ omicronlyrae.brimstone.xpxsirius.io:7900) with result Success 
+2019-11-13 11:24:57.392612 0x00007f881617a700: <info> (disruptor::ConsumerDispatcher.cpp@43) completing processing of element 4 (400 blocks (heights 1602 - 2001) [DC6021C9] from Remote_Pull), last consumer is 0 elements behind 
+2019-11-13 11:25:00.643511 0x00007f8828188700: <info> (chain::ChainSynchronizer.cpp@207) peer returned 400 blocks (heights 2002 - 2401) 
+2019-11-13 11:25:00.644119 0x00007f8828188700: <info> (chain::RemoteApiForwarder.h@66) completed 'synchronizer task' (tier1a-mainnet-chain-peer3 @ omicronlyrae.brimstone.xpxsirius.io:7900) with result Success 
+2019-11-13 11:25:00.883634 0x00007f881617a700: <info> (disruptor::ConsumerDispatcher.cpp@43) completing processing of element 5 (400 blocks (heights 2002 - 2401) [4462893B] from Remote_Pull), last consumer is 0 elements behind 
+2019-11-13 11:25:04.139147 0x00007f8828188700: <info> (chain::ChainSynchronizer.cpp@207) peer returned 400 blocks (heights 2402 - 2801) 
+2019-11-13 11:25:04.139515 0x00007f8828188700: <info> (chain::RemoteApiForwarder.h@66) completed 'synchronizer task' (tier1B-mainnet-chain-peer10 @ acallaris.brimstone.xpxsirius.io:7900) with result Success 
+2019-11-13 11:25:04.405145 0x00007f881617a700: <info> (disruptor::ConsumerDispatcher.cpp@43) completing processing of element 6 (400 blocks (heights 2402 - 2801) [DEE28CC8] from Remote_Pull), last consumer is 0 elements behind 
+2019-11-13 11:25:07.778694 0x00007f8828188700: <info> (chain::ChainSynchronizer.cpp@207) peer returned 400 blocks (heights 2802 - 3201) 
+2019-11-13 11:25:07.779163 0x00007f8828188700: <info> (chain::RemoteApiForwarder.h@66) completed 'synchronizer task' (tier1B-mainnet-chain-peer8 @ proioxis.brimstone.xpxsirius.io:7900) with result Success 
+2019-11-13 11:27:17.727823 0x00007f4fd8731700: <info> (src::DiagnosticsService.cpp@39) --- current counter values ---
+  MEM CUR RSS : 61
+  MEM MAX RSS : 61
+ MEM CUR VIRT : 864
+  MEM SHR RSS : 37
+TOT CONF TXES : 40
+     ACNTST C : 15
+ ACNTST C HVA : 7
+     BLKDIF C : 566
+       HASH C : 0
+ SECRETLOCK C : 0
+     CONFIG C : 1
+   CONTRACT C : 0
+ REPUTATION C : 0
+     MOSAIC C : 6
+   MULTISIG C : 0
+   METADATA C : 0
+   HASHLOCK C : 0
+    UPGRADE C : 1
+         NS C : 2
+      NS C AS : 8
+      NS C DS : 8
+   PROPERTY C : 0
+     UT CACHE : 0
+    B WRITERS : 0
+      WRITERS : 10
+ BLK ELEM TOT : 15
+ BLK ELEM ACT : 0
+  TX ELEM TOT : 0
+  TX ELEM ACT : 0
+RB COMMIT ALL : 0
+RB COMMIT RCT : 0
+RB IGNORE ALL : 0
+RB IGNORE RCT : 0
+ UNLKED ACCTS : 0
+TS OFFSET ABS : 0
+TS OFFSET DIR : 0
+  TS NODE AGE : 0
+ TS TOTAL REQ : 0
+ ACTIVE PINGS : 0
+  TOTAL PINGS : 0
+SUCCESS PINGS : 0
+      READERS : 0
+        TASKS : 12 
+
+2019-11-13 11:27:18.299695 0x00007f4fd8731700: <info> (chain::ChainSynchronizer.cpp@207) peer returned 400 blocks (heights 16402 - 16801) 
+2019-11-13 11:27:18.300154 0x00007f4fd8731700: <info> (chain::RemoteApiForwarder.h@66) completed 'synchronizer task' (tier1B-mainnet-chain-peer8 @ proioxis.brimstone.xpxsirius.io:7900) with result Success 
+
+
+
+
+```
+
+
+
+...also observe the Blockchain's height increasing:
+```
+
+(disruptor::ConsumerDispatcher.cpp@43) completing processing of element 22 (3 blocks (heights 10725 - 10727) [FBD6794A] from Remote_Pull), last consumer is 0 elements behind 
+```
+
+
+Take note of the "heights" statement in the logs, which shows that the blockchain creates new blocks every 15 seconds (by default).
+
+
+---
+
 
