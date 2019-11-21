@@ -15,10 +15,12 @@ Ensure that your local network can allow inbound/outbound comms on these ports:
 ```
 
 
-### System Requirements
-The Sirius Blokchain Peer is designed to work with minimum Hardware perfomance of   1 CPU core and 2GB RAM, so your Vagrant VM must have these minimum resource specs.
+### A note on System Requirements
+Theoretically, this dockerized Sirius Peer package can perform on any Nix OS flavor running Docker version 19.03.3 and docker-compose version version 1.24.0.
 
-As for OS Version requirements, the debian installer will run with these minimums:
+But if you really need a minimum benchmark, we have seen the  Sirius Blockchain Peer to work with a minimum Hardware perfomance of   1 CPU core and 2GB RAM.
+
+This doc was prepared by testing that package on:
 ```
 - Debian 10 ++
 - Ubuntu 19.04 ++
@@ -54,21 +56,23 @@ sudo apt install docker-ce docker-ce-cli containerd.io -y
 sudo mkdir -m 777 /opt/catapult-config
 cd /opt/catapult-config
 wget https://proximax-vagrant-storage.s3-ap-southeast-1.amazonaws.com/public-testnet-peer-dockerpackage.tar.gz
+tar -xvf public-testnet-peer-dockerpackage.tar.gz
+cp -R public-testnet-peer-package/* /opt/catapult-config
 
 
 ```
 
 ---
 
-
-### Update your OS:
+### Load the ProximaX Peer Docker image into local:
 ```bash
 
-sudo apt update -y && sudo apt upgrade -y
+sudo docker load -i proximax-sirius-peer-toolless.tar
+a23e56f572d1
+a23e56f572d1
 
 ```
 
----
 
 
 
