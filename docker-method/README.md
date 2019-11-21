@@ -104,7 +104,7 @@ proximax-sirius-peer-toolless   release-v0.4.3      a23e56f572d1
 # Before running Sirius Peer...
 You need to create a Testnet Keypair to serve as your HarvestKey.
 
-There are two ways to create a harvestKey:
+There are two ways to create a TESTNET harvestKey:
 ---
 
 1. Using BCTESTNET WALLET - [testnetwallet-link](https://bctestnetwallet.xpxsirius.io/)
