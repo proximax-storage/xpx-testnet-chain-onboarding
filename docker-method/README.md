@@ -48,12 +48,12 @@ sudo apt install docker-ce docker-ce-cli containerd.io -y
 ```
 
 
-### Unpack the Docker-compose Package!
+### Unpack the docker-compose Package!
 
 ```bash
 sudo mkdir -m 777 /opt/catapult-config
 cd /opt/catapult-config
-wget <blah>
+wget https://proximax-vagrant-storage.s3-ap-southeast-1.amazonaws.com/public-testnet-peer-dockerpackage.tar.gz
 
 
 ```
