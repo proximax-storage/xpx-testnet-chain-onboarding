@@ -138,6 +138,8 @@ Once created, simply put your privateKey harvestKey into configfile:
 ---
 
 You can change the name of the node by changing host and friendlyName parameters:
+host 	        string 	Node host (leave empty to auto-detect IP). 	 
+friendlyName 	string 	Node friendly name (leave empty to use address).
 ```
 /opt/catapult-config/resources/config-node.properties
 ```
