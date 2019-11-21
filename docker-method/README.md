@@ -1,6 +1,7 @@
 # Docker-Compose method for Testnet Sirius
 ---
-This method leverages the public Sirius docker image, embedded in the release tar.gz file.
+This method leverages the public Sirius docker image, embedded in the release section's tar.gz file. [link](https://github.com/proximax-storage/vagrant-testnet-sirius-peernode/releases/tag/release-v0.4.3)
+
 
 
 ### OS Network requirements
