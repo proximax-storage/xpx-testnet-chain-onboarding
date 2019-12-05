@@ -72,11 +72,11 @@ sudo systemctl status docker.service
 ```bash
 sudo mkdir -m 777 /opt/catapult-config
 cd /opt/catapult-config
-wget https://proximax-vagrant-storage.s3-ap-southeast-1.amazonaws.com/public-testnet-peer-dockerpackage.tar.gz
-tar -xvf public-testnet-peer-dockerpackage.tar.gz
-rm -rf public-testnet-peer-dockerpackage.tar.gz
-cp -R public-testnet-peer-package/* /opt/catapult-config
-rm -rf public-testnet-peer-package/
+wget https://proximax-vagrant-storage.s3-ap-southeast-1.amazonaws.com/public-testnet-peer-dockerpackage-v043.tar.gz
+tar -xvf public-testnet-peer-dockerpackage-v043.tar.gz
+rm -rf public-testnet-peer-dockerpackage-v043.tar.gz
+cp -R public-testnet-peer-package-v0.4.3/* /opt/catapult-config
+rm -rf public-testnet-peer-package-v0.4.3/
 
 ```
 
