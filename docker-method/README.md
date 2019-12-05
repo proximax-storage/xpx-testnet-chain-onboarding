@@ -82,6 +82,15 @@ rm -rf public-testnet-peer-package/
 
 ---
 
+
+### Unpack the SEED DATA:
+```bash
+cd /opt/catapult-config
+tar -xvf seed-public-test-v0.4.3.tar.gz
+
+```
+
+
 ### Load the Public ProximaX Peer Docker image into local:
 ```bash
 
