@@ -14,7 +14,7 @@ Installation instructions for docker-compose can be found [here](https://docs.do
 
 ## Download and Extract the package
 ```
-$ wget https://github.com/proximax-storage/xpx-testnet-chain-onboarding/releases/download/release-v0.4.3-buster/$ public-testnet-peer-package-v0.4.3.tar.gz
+$ wget https://github.com/proximax-storage/xpx-testnet-chain-onboarding/releases/download/release-v0.4.3-buster/public-testnet-peer-package-v0.4.3.tar.gz
 $ tar -zxvf public-testnet-peer-package-v0.4.3
 $ cd public-testnet-peer-package-v0.4.3
 ```
