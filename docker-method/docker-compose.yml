@@ -1,13 +1,14 @@
 version: "3.6"
 services:
-  catapult:
-    image: proximax-sirius-peer-toolless:release-v0.4.3
+  testnet-peer:
+    image: proximax/proximax-sirius-chain:v0.4.3-buster
     ports:
       - 7902:7902
       - 7900:7900
       - 7901:7901
     volumes:
-      - /opt/catapult-config:/catapultconfig
-      - /opt/catapult-config/data:/data:rw
-      - /opt/catapult-config/logs:/logs:rw
-    restart: always
+      - ./:/chainconfig
+      - ./data:/data:rw
+      - ./logs:/logs:rw
+    entrypoint: /bin/bash
+    command: -c "rm -rf /data/server.lock && /sirius/bin/sirius.bc /chainconfig"
