@@ -155,7 +155,7 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl enable sirius-chain-testnet
 ```
 
-If the Docker container isn't running yet, you can start the conatiner using this command:
+If the Docker container isn't running yet, you can start the container using this command:
 ```
 $ sudo systemctl start sirius-chain-testnet
 ```
