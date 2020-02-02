@@ -37,9 +37,9 @@ $ sudo systemctl status docker.service
 
 ## Download and Extract the package
 ```
-$ wget https://github.com/proximax-storage/xpx-testnet-chain-onboarding/releases/download/release-v0.4.3-buster/public-testnet-peer-package-v0.4.3.tar.gz
-$ tar -zxvf public-testnet-peer-package-v0.4.3.tar.gz
-$ cd public-testnet-peer-package-v0.4.3
+$ wget https://github.com/proximax-storage/xpx-testnet-chain-onboarding/releases/download/release-v0.5.3-buster/public-testnet-peer-package-v0.5.3.tar.gz
+$ tar -zxvf public-testnet-peer-package-v0.5.3.tar.gz
+$ cd public-testnet-peer-package-v0.5.3
 ```
 
 ## Generate a keypair
@@ -113,6 +113,13 @@ $ docker-compose down
 ## Restart the Peer Node
 ```
 $ docker-compose restart
+```
+
+## Reset the Peer Node
+```
+$ docker-compose down
+$ ./reset.sh
+$ docker-compose up -d
 ```
 
 ## Check logs
