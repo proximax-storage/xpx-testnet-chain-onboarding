@@ -37,9 +37,9 @@ $ sudo systemctl status docker.service
 
 ## Download and Extract the package
 ```
-$ wget https://github.com/proximax-storage/xpx-testnet-chain-onboarding/releases/download/release-v0.4.3-buster/public-testnet-peer-package-v0.4.3.tar.gz
-$ tar -zxvf public-testnet-peer-package-v0.4.3.tar.gz
-$ cd public-testnet-peer-package-v0.4.3
+$ wget https://github.com/proximax-storage/xpx-testnet-chain-onboarding/releases/download/release-v0.5.3-buster/public-testnet-peer-package-v0.5.3.tar.gz
+$ tar -zxvf public-testnet-peer-package-v0.5.3.tar.gz
+$ cd public-testnet-peer-package-v0.5.3
 ```
 
 ## Generate a keypair
@@ -115,6 +115,13 @@ $ docker-compose down
 $ docker-compose restart
 ```
 
+## Reset the Peer Node
+```
+$ docker-compose down
+$ ./reset.sh
+$ docker-compose up -d
+```
+
 ## Check logs
 There are 2 ways to view the logs:
 1. docker logs
@@ -125,21 +132,21 @@ $ docker-compose logs --tail=100 -f
 2. log files in `logs` directory
 
 ## Common Issue
-*Failure_Core_Insufficient_Balance at block 55476*
+*Remote_Pull due to Failure_Consumer_Remote_Chain_Mismatched_Difficulties at block 736347, 740243, 752165*
 
-Testnet was upgraded at block height `55476` with delta `60`. The delta is lower than default `400`.  Therefore, you will be required to stop the peer node and update the config to overcome this delta.
+Testnet was upgraded at block height `736347`, `740243` and `752165` with a change of `maxDifficultyBlocks` between 3 and 4.  Therefore, you will be required to stop the peer node and update the config to overcome this delta.
 [config-node.properties](resources/config-node.properties#L13):
 
 ```
-maxBlocksPerSyncAttempt = 40
+maxBlocksPerSyncAttempt = 1
 ```
 
-Restart the peer node and check the logs whether the peer node is able to continue to sync with the block chain.  If it is able to, you may revert the config to the default value
+Restart the peer node and check the logs whether the peer node is able to continue to sync with the block chain.  If it is able to, you may revert the config to the default value once it has reached block height `752165`.
 ```
 maxBlocksPerSyncAttempt = 400
 ```
 
-Restart the node to allow the config to take into effect.
+Restart the node to allow the config to take into effect.  
 
 ## Helpdesk
 We have a [telegram helpdesk](https://t.me/proximaxhelpdesk) to assist general queries.
