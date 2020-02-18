@@ -1,7 +1,7 @@
 version: "3.6"
 services:
   testnet-peer:
-    image: proximax/proximax-sirius-chain:v0.5.3-buster
+    image: proximax/proximax-sirius-chain:v0.5.4-buster
     ports:
       - 7902:7902
       - 7900:7900
