@@ -1,7 +1,7 @@
 version: "3.6"
 services:
   testnet-peer:
-    image: proximax/proximax-sirius-chain:v0.5.4-buster
+    image: proximax/proximax-sirius-chain:v0.6.0-buster
     ports:
       - 7902:7902
       - 7900:7900
@@ -10,5 +10,6 @@ services:
       - ./:/chainconfig
       - ./data:/data:rw
       - ./logs:/logs:rw
+    restart: on-failure:3
     entrypoint: /bin/bash
     command: -c "rm -rf /data/server.lock && /sirius/bin/sirius.bc /chainconfig"
