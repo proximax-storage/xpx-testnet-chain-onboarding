@@ -7,7 +7,7 @@ for dir in data/*; do
     sudo rm -rf $dir
 done
 
-if [ -d "mongodata"]; then
+if [ -d "mongodata" ]; then
     echo "deleting mongodata directory"
     for dir in mongodata/*; do
         sudo rm -rf $dir
