@@ -10,7 +10,7 @@ Ensure that your local network allows inbound/outbound traffic on these ports:
 A note on System Requirements:
 Theoretically, this dockerized Sirius API package can run on any OS running Docker version 19.03.3 and docker-compose version 1.24.0.
 
-But if you really need a minimum benchmark, we have seen the Sirius Blockchain API to work with a minimum Hardware of 1 CPU core and 2GB RAM.
+The API node has 3 components:  sirius chain, Mongo and rest gateway.  We were able to run the API node on a AWS EC2 T3a.small with specs of 2 vCPU and 2GiB RAM.  We recommend a min. 2GB RAM as Mongo DB can be memory intensive.
 
 This README was prepared by testing the package on:
 - Debian 10 ++
