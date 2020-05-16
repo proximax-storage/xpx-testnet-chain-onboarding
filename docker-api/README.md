@@ -43,9 +43,9 @@ $ sudo systemctl status docker.service
 
 ## Download and Extract the package
 ```
-$ wget https://github.com/proximax-storage/xpx-testnet-chain-onboarding/releases/download/release-v0.5.3-buster/public-testnet-api-package-v0.6.0.tar.gz
-$ tar -zxvf public-testnet-api-package-v0.6.0.tar.gz
-$ cd public-testnet-api-package-v0.6.0
+$ wget https://github.com/proximax-storage/xpx-testnet-chain-onboarding/releases/download/release-v0.6.2-buster/public-testnet-api-package-v0.6.2.tar.gz
+$ tar -zxvf public-testnet-api-package-v0.6.2.tar.gz
+$ cd public-testnet-api-package-v0.6.2
 ```
 
 ## Generate a keypair
@@ -184,9 +184,10 @@ $ docker-compose logs --tail=100 -f
 2. log files in `logs` directory
 
 ## Common Issue
-*Remote_Pull due to Failure_Chain_Block_Inconsistent_State_Hash*
+*Dynamic exception type: boost::wrapexcept<catapult::catapult_error<std::invalid_argument> >
+catapult-api-node_1  | std::exception::what: cannot insert element with height XXXXX when cache height is YYYYY*
 
-The error occur when the node fails to update exchange cache after rollback.  This bug has been reported to ProximaX core developers and the developers are looking into resolving this issue.  Meantime, the node will need to be [reset](#Reset-the-API-Node) as mentioned above.
+The error occur when the node's blockchain height and the cache height is not the same.   This can occur due to unexpected exit when the software is writing blocks to the node's blockchain database.  The node will need to be [reset](#Reset-the-API-Node) as mentioned above.
 
 ## Helpdesk
 We have a [telegram helpdesk](https://t.me/proximaxhelpdesk) to assist general queries.
