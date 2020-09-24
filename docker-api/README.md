@@ -43,9 +43,9 @@ $ sudo systemctl status docker.service
 
 ## Download and Extract the package
 ```
-$ wget https://github.com/proximax-storage/xpx-testnet-chain-onboarding/releases/download/release-v0.6.2-buster/public-testnet-api-package-v0.6.2.tar.gz
-$ tar -zxvf public-testnet-api-package-v0.6.2.tar.gz
-$ cd public-testnet-api-package-v0.6.2
+$ wget https://github.com/proximax-storage/xpx-testnet-chain-onboarding/releases/download/release-v0.6.5-buster/public-testnet-api-package-v0.6.5.tar.gz
+$ tar -zxvf public-testnet-api-package-v0.6.5.tar.gz
+$ cd public-testnet-api-package-v0.6.5
 ```
 
 ## Generate a keypair
