@@ -36,30 +36,90 @@ $ sudo systemctl status docker.service
 ```
 
 ## Download and Extract the package
+
+### For new peer setup
+
+**If you are upgrading from a previous version, please skip this section and go to next section below**
+
+```sh
+wget https://files.proximax.io/public-testnet-peer-package-latest.tar.gz
+# verify the SHA256 Hash Checksum is correct
+wget https://files.proximax.io/public-testnet-peer-package-latest.tar.gz.sha256
+shasum -c public-testnet-peer-package-latest.tar.gz.sha256
+# If ok, you have downloaded an authentic file, otherwise the file is corrupted.
+tar -xvf public-testnet-peer-package-latest.tar.gz
+# rename folder
+mv public-testnet-peer-package-v0.6.5 public-testnet-peer-package
+cd public-testnet-peer-package
+# download latest snapshot
+wget https://proximax-files-dist.s3-ap-southeast-1.amazonaws.com/testnet-data-snapshot.tar.xz
+# extract data folder from snapshot
+tar -xvf testnet-data-snapshot.tar.xz data
+# delete snapshot 
+rm testnet-data-snapshot.tar.xz
 ```
-$ wget https://github.com/proximax-storage/xpx-testnet-chain-onboarding/releases/download/release-v0.5.3-buster/public-testnet-peer-package-v0.5.3.tar.gz
-$ tar -zxvf public-testnet-peer-package-v0.5.3.tar.gz
-$ cd public-testnet-peer-package-v0.5.3
-```
 
-## Generate a keypair
-```
-$ tools/generate_key_pair
-```
+### Upgrading
 
-## Insert private key in [config-user.properties](resources/config-user.properties)
+The following instruction is assuming that existing node installation is located in `~/public-testnet-peer-package`.  If it is different, please change the path accordingly.
 
-Replace `BOOTKEY_PRIVATE_KEY` with the generated private key. This is the account which holds the node reputation.
+Make sure you have `rsync` installed. if not, follow either of the commands below.
 
 ```
-[account]
+yum install rsync // using yum 
+```
+or
+```
+apt-get install rsync // using advance package tool (apt)
+```
 
-bootKey = BOOTKEY_PRIVATE_KEY 
+After installing `rsync`, run the following commands to pull the latest package.
 
-[storage]
+```sh
+# stop docker
+cd ~/public-testnet-peer-package
+docker-compose down
 
-dataDirectory = /data
-pluginsDirectory = 
+# download new files in tmp folder
+cd /tmp
+wget https://files.proximax.io/public-testnet-peer-package-latest.tar.gz
+tar -xvf public-testnet-peer-package-latest.tar.gz
+# verify the SHA256 Hash Checksum is correct
+wget https://files.proximax.io/public-testnet-peer-package-latest.tar.gz.sha256
+shasum -c public-testnet-peer-package-latest.tar.gz.sha256
+# If ok, you have downloaded an authentic file, otherwise the file is corrupted.
+rsync -av --progress \
+    --exclude 'data' \
+    --exclude 'resources/config-user.properties' \
+    --exclude 'resources/config-node.properties' \
+    --exclude 'resources/config-harvesting.properties' 
+    public-mainnet-peer-package-v0.6.5/ ~/public-mainnet-peer-package
+
+# resume docker
+cd ~/public-mainnet-peer-package
+docker-compose up -d
+```
+
+## Delegated Validating
+
+You may activate your account for delegated validating by running the following tool:
+```
+$ tools/delegate_validating_testnet
+```
+
+After running the above tool, it will generate a private key.  This is the delegated remote account private key.
+
+Insert this private key to [config-harvesting.properties](resources/config-harvesting.properties) and [config-user.properties](resources/config-user.properties)
+
+In [config-harvesting.properties](resources/config-harvesting.properties), replace `REMOTE_ACCOUNT_PRIVATE_KEY` with the generated private key.
+
+```
+[harvesting]
+# private keys are 64 characters
+harvestKey = REMOTE_ACCOUNT_PRIVATE_KEY
+beneficiary = 0000000000000000000000000000000000000000000000000000000000000000
+isAutoHarvestingEnabled = true
+maxUnlockedAccounts = 5
 ```
 
 ## Assign a friendly name in  [config-node.properties](resources/config-node.properties) (OPTIONAL)
@@ -75,20 +135,17 @@ version = 0
 roles = Peer
 ```
 
-## Delegated Validating
-You may activate your account for delegated validating by running the following tool:
-```
-$ tools/delegate_validating_testnet
-```
+In [config-user.properties](resources/config-user.properties), replace `BOOTKEY_PRIVATE_KEY` with the generated private key.  This is the account which holds the node reputation.
 
-After running the above tool, add the delegated remote account private key in the [config-harvesting.properties](resources/config-harvesting.properties):
 ```
-[harvesting]
-# private keys are 64 characters
-harvestKey = REMOTE_ACCOUNT_PRIVATE_KEY
-beneficiary = 0000000000000000000000000000000000000000000000000000000000000000
-isAutoHarvestingEnabled = true
-maxUnlockedAccounts = 5
+[account]
+
+bootKey = BOOTKEY_PRIVATE_KEY 
+
+[storage]
+
+dataDirectory = /data
+pluginsDirectory = 
 ```
 
 Verify that your account has successfully activated delegated validation by checking the explorer using the generated transaction hash or using your account address.
@@ -130,23 +187,6 @@ $ docker-compose logs --tail=100 -f
 ```
 
 2. log files in `logs` directory
-
-## Common Issue
-*Remote_Pull due to Failure_Consumer_Remote_Chain_Mismatched_Difficulties at block 736347, 740243, 752165*
-
-Testnet was upgraded at block height `736347`, `740243` and `752165` with a change of `maxDifficultyBlocks` between 3 and 4.  Therefore, you will be required to stop the peer node and update the config to overcome this delta.
-[config-node.properties](resources/config-node.properties#L13):
-
-```
-maxBlocksPerSyncAttempt = 1
-```
-
-Restart the peer node and check the logs whether the peer node is able to continue to sync with the block chain.  If it is able to, you may revert the config to the default value once it has reached block height `752165`.
-```
-maxBlocksPerSyncAttempt = 400
-```
-
-Restart the node to allow the config to take into effect.  
 
 ## Helpdesk
 We have a [telegram helpdesk](https://t.me/proximaxhelpdesk) to assist general queries.
