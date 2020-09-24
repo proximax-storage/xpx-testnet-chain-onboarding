@@ -93,10 +93,10 @@ rsync -av --progress \
     --exclude 'resources/config-user.properties' \
     --exclude 'resources/config-node.properties' \
     --exclude 'resources/config-harvesting.properties' 
-    public-mainnet-peer-package-v0.6.5/ ~/public-mainnet-peer-package
+    public-testnet-peer-package-v0.6.5/ ~/public-testnet-peer-package
 
 # resume docker
-cd ~/public-mainnet-peer-package
+cd ~/public-testnet-peer-package
 docker-compose up -d
 ```
 
