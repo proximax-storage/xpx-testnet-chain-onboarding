@@ -18,7 +18,7 @@ services:
 
   catapult-api-node:
     # Downloads Catapult Server from specified Docker repo
-    image: proximax/proximax-sirius-chain:v0.6.0-buster
+    image: proximax/proximax-sirius-chain:v0.6.5-buster
     ports:
       - 7902:7902
       - 7900:7900
@@ -31,7 +31,7 @@ services:
     command: -c "rm -rf /data/server.lock && /sirius/bin/sirius.bc /chainconfig"
 
   rest-gateway:
-    image: proximax/proximax-sirius-rest:v0.6.0
+    image: proximax/proximax-sirius-rest:v0.6.4
     ports:
     - "3000:3000"
     volumes:
