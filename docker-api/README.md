@@ -14,7 +14,7 @@ The API node has 3 components:  sirius chain, Mongo and rest gateway.  We were a
 
 This README was prepared by testing the package on:
 - Debian 10 ++
-- Ubuntu 19.04 ++
+- Ubuntu 20.04 ++
 - CentOS 7 ++
 
 ## Pre-requisite
@@ -42,66 +42,28 @@ $ sudo systemctl status docker.service
 ```
 
 ## Download and Extract the package
-```
-$ wget https://github.com/proximax-storage/xpx-testnet-chain-onboarding/releases/download/release-v0.6.5-buster/public-testnet-api-package-v0.6.5.tar.gz
-$ tar -zxvf public-testnet-api-package-v0.6.5.tar.gz
-$ cd public-testnet-api-package-v0.6.5
-```
 
-## Generate a keypair
-```
-$ tools/generate_key_pair
-```
+### For new API setup 
 
-## Insert private key in [config-user.properties](resources/config-user.properties)
-
-Replace `BOOTKEY_PRIVATE_KEY` with the generated private key. This is the account which holds the node reputation.
-
-```
-[account]
-
-bootKey = BOOTKEY_PRIVATE_KEY 
-
-[storage]
-
-dataDirectory = /data
-pluginsDirectory = 
+```sh 
+wget https://github.com/proximax-storage/xpx-testnet-chain-onboarding/releases/download/release-v0.6.9/public-testnet-api-package-release-v0.6.9.tar.gz
+# verify the SHA256 Hash Checksum is correct
+wget https://github.com/proximax-storage/xpx-testnet-chain-onboarding/releases/download/release-v0.6.9/public-testnet-api-package-release-v0.6.9.tar.gz.sha256
+shasum -c public-testnet-api-package-release-v0.6.9.tar.gz.sha256
+# If ok, you have downloaded an authentic file, otherwise the file is corrupted.
+tar -zxvf public-testnet-api-package-release-v0.6.9.tar.gz
+cd public-testnet-api-package
 ```
 
-## Update rest gateway configuration file in [rest.json](restuserconfig/rest.json)
+## Assign keys to Node and Rest
 
-Replace `REST_PRIVATE_KEY` and `BOOTKEY_PUBLIC_KEY` with the generated keys from the above mentioned script.
+To set up node bootkeys and client rest keys for the API node, run the following script:
 
 ```
-{
-    "network": {
-        "name": "publicTest",
-        "description": "ProximaX Sirius Chain Brimstone Test Network"
-    },
-
-    "port": 3000,
-    "crossDomainHttpMethods": ["GET", "POST", "PUT", "OPTIONS"],
-    "cors": "*",
-    "clientPrivateKey": "REST_PRIVATE_KEY",
-    "extensions": ["accountLink", "accountProperties", "aggregate", "exchange", "config", "lock", "metadata", "mosaic", "multisig", "namespace", "operation", "receipts", "richlist", "service", "supercontract", "transfer", "upgrade"],
-    "db": {
-        "url": "mongodb://db:27017/",
-        "name": "catapult",
-        "pageSizeMin": 10,
-        "pageSizeMax": 100,
-        "pageSizeStep": 25,
-        "maxConnectionAttempts": 5,
-        "baseRetryDelay": 500
-    },
-
-    "apiNode": {
-        "host": "catapult-api-node",
-        "port": 7900,
-        "publicKey": "BOOTKEY_PUBLIC_KEY",
-        "timeout": 1000
-    },
-...
+$ tools/auto_install_keys.sh
 ```
+
+The script will generate random keypairs and will insert the node bootkey and client rest key into the following files: `resources/config-user.properties` and `restuserconfig/rest.json`
 
 ## Assign a friendly name in  [config-node.properties](resources/config-node.properties) (OPTIONAL)
 
@@ -157,6 +119,40 @@ catapult-config_rest-gateway_1        docker-entrypoint.sh ash - ...   Up       
 
 Note:  init-db initializes the db and will exit after DB has been initialize.  If the DB initialization is successful, it should exit with status 0 (i.e. `Exit 0`).
 
+## Testing REST API
+
+Run the following to test your API node:
+
+```sh
+# check network info:
+curl http://localhost:3000/network
+# check node chain height:
+curl http://localhost:3000/chain/height
+# check api node info:
+curl http://localhost:3000/node/info
+```
+
+If the above is successful, you may make REST API calls to your node.  Run the following to get the public IP address of our node
+
+```sh
+curl ifconfig.me
+```
+
+Use the ip address that you get from `curl ifconfig.me` and enter into the web-browser as follow http://<node public ip address>:3000/chain/height.
+
+Example:
+In the linux shell terminal:  `$curl ifconfig.me` outputs `202.187.132.85`
+
+I will enter the following in my Chrome web browser:
+http://202.187.132.85:3000/chain/height
+and I should see something like this: `{"height":[1440873,0]}`
+
+If the above fails, please check your node's firewall setting and that port 3000 is accessible from the Internet.
+
+You can add your node to the web explorer `http://explorer.xpxsirius.io`.  Select `node`, `Add node`, key in `http://<ip_address>:3000`, and click `Add`.  Your node should appear in the Node section of the explorer.
+
+Refer to [here](https://bcdocs.xpxsirius.io/endpoints/) to get the full list of available endpoints of **ProximaX Sirius Chain**.
+
 ## Stop the API Node
 ```
 $ docker-compose down
@@ -182,12 +178,6 @@ $ docker-compose logs --tail=100 -f
 ```
 
 2. log files in `logs` directory
-
-## Common Issue
-*Dynamic exception type: boost::wrapexcept<catapult::catapult_error<std::invalid_argument> >
-catapult-api-node_1  | std::exception::what: cannot insert element with height XXXXX when cache height is YYYYY*
-
-The error occur when the node's blockchain height and the cache height is not the same.   This can occur due to unexpected exit when the software is writing blocks to the node's blockchain database.  The node will need to be [reset](#Reset-the-API-Node) as mentioned above.
 
 ## Helpdesk
 We have a [telegram helpdesk](https://t.me/proximaxhelpdesk) to assist general queries.

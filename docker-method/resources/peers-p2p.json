@@ -1,152 +1,36 @@
 {
     "_info": "this file contains a list of all trusted peers and can be shared",
-    "knownPeers": [{
-            "publicKey": "46344F7A8787D48FE62FE09D8BC775B8FDFBE77372D25E178AD1E1E945358ACC",
+    "knownPeers": [
+        {
+            "publicKey": "F6A9951DDB2B9EF2C7EB5132654562FC6D2308B42AEAAFD11097B232F429AF70",
             "endpoint": {
-                "host": "testnet-genesis-peer1.brimstone.xpxsirius.io",
+                "host": "genesis-p2p-1.testnet2.xpxsirius.io",
                 "port": 7900
             },
             "metadata": {
-                "name": "mainnet-practice2-chain-peer1",
+                "name": "testnet2-genesis-p2p-1",
                 "roles": "Peer"
             }
         },
         {
-            "publicKey": "F85415335E73828C9B5C39E38584F90557E46C47E711AB88322C39C390D92250",
+            "publicKey": "E94CF58CEFCB1E9F590B8D190807CA4B6EF51A39847A64CDC6DB344B5AE16A6E",
             "endpoint": {
-                "host": "testnet-genesis-peer2.brimstone.xpxsirius.io",
+                "host": "genesis-p2p-2.testnet2.xpxsirius.io",
                 "port": 7900
             },
             "metadata": {
-                "name": "mainnet-practice2-chain-peer2",
+                "name": "testnet2-genesis-p2p-2",
                 "roles": "Peer"
             }
         },
         {
-            "publicKey": "55677D71F2D28A05DF8213C9C1294474A66BF6A726840B50E2AF4BDF5EEFB1BD",
+            "publicKey": "E7AD7683AC815C664BA738A48198FFA59E2E2B6283B54DF2F799B86353AD62BB",
             "endpoint": {
-                "host": "testnet-genesis-peer3.brimstone.xpxsirius.io",
+                "host": "genesis-p2p-3.testnet2.xpxsirius.io",
                 "port": 7900
             },
             "metadata": {
-                "name": "mainnet-practice2-chain-peer3",
-                "roles": "Peer"
-            }
-        },
-        {
-            "publicKey": "DD70F017FC334FD1633EFE252AA8D225ECC760ACE773E2A7C2FF93D3B2F8BF2D",
-            "endpoint": {
-                "host": "peer1-testnet-apsoutheast1.brimstone.xpxsirius.io",
-                "port": 7900
-            },
-            "metadata": {
-                "name": "testnet-apsoutheast-peer1",
-                "roles": "Peer"
-            }
-        },
-        {
-            "publicKey": "7979269FA89E42AF678D66AA29ADBC4BD30A228770A345B232796B753236AE03",
-            "endpoint": {
-                "host": "peer2-testnet-apsoutheast1.brimstone.xpxsirius.io",
-                "port": 7900
-            },
-            "metadata": {
-                "name": "testnet-apsoutheast-peer2",
-                "roles": "Peer"
-            }
-
-        },
-        {
-            "publicKey": "F9D0D602D3F176FBB9144161EB73F3C86B9EAF2BA3C05C30EFA6E6F1BFFB0CBD",
-            "endpoint": {
-                "host": "peer3-testnet-apsoutheast1.brimstone.xpxsirius.io",
-                "port": 7900
-            },
-            "metadata": {
-                "name": "testnet-apsoutheast-peer3",
-                "roles": "Peer"
-            }
-
-        },
-        {
-            "publicKey": "F170C8AF346B45557D3A64AAD7D173CB7488228F9423B68EB329860BC069EF38",
-            "endpoint": {
-                "host": "peer4-testnet-apsoutheast1.brimstone.xpxsirius.io",
-                "port": 7900
-            },
-            "metadata": {
-                "name": "testnet-apsoutheast-peer4",
-                "roles": "Peer"
-            }
-
-        },
-        {
-            "publicKey": "0524A40ED356707B544E48E9EEA622176E9DB76D74A6B32C22FDE1201BC7DD46",
-            "endpoint": {
-                "host": "peer5-testnet-apsoutheast1.brimstone.xpxsirius.io",
-                "port": 7900
-            },
-            "metadata": {
-                "name": "testnet-apsoutheast-peer5",
-                "roles": "Peer"
-            }
-
-        },
-        {
-            "publicKey": "EC831F10F1993A99EF5FD30538FA30DD7719E92308320E4E572C8822F3D2E2CD",
-            "endpoint": {
-                "host": "peer1-testnet-uswest2.brimstone.xpxsirius.io",
-                "port": 7900
-            },
-            "metadata": {
-                "name": "testnet-uswest2-peer1",
-                "roles": "Peer"
-            }
-
-        },
-        {
-            "publicKey": "90EFC356D046D80544A10CBD9D5CFB41D33B5E8910DF36888F9E0EB07F8ADD49",
-            "endpoint": {
-                "host": "peer2-testnet-uswest2.brimstone.xpxsirius.io",
-                "port": 7900
-            },
-            "metadata": {
-                "name": "testnet-uswest2-peer2",
-                "roles": "Peer"
-            }
-
-        },
-        {
-            "publicKey": "7B78758B077E84A59E886C320156BD4E56FB7CCC8A4990CD6EF5C35DB47F35FF",
-            "endpoint": {
-                "host": "peer3-testnet-uswest2.brimstone.xpxsirius.io",
-                "port": 7900
-            },
-            "metadata": {
-                "name": "testnet-uswest2-peer3",
-                "roles": "Peer"
-            }
-
-        },
-        {
-            "publicKey": "BC777530FD543C3850765E74AA121CB1D9B904AC56347CCA6C4ACF7AA6640765",
-            "endpoint": {
-                "host": "peer4-testnet-uswest2.brimstone.xpxsirius.io",
-                "port": 7900
-            },
-            "metadata": {
-                "name": "testnet-uswest2-peer4",
-                "roles": "Peer"
-            }
-        },
-        {
-            "publicKey": "A17995A4AEC640A80582E18A8FD12D1E868562A83EACDACF141B6DF2A8F46619",
-            "endpoint": {
-                "host": "peer5-testnet-uswest2.brimstone.xpxsirius.io",
-                "port": 7900
-            },
-            "metadata": {
-                "name": "testnet-uswest2-peer5",
+                "name": "testnet2-genesis-p2p-3",
                 "roles": "Peer"
             }
         }

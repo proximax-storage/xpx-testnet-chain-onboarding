@@ -1,49 +1,15 @@
 {
-  "_info": "this file contains a list of api peers",
-  "knownPeers": [
-  {
-    "publicKey": "3BDBE9E49DD64F4DDE855F096805823B695B11EA48D046508DD345F4B9FE4ADE",
-    "endpoint": {
-      "host": "bctestnet1.brimstone.xpxsirius.io",
-      "port": 7900
-    },
-    "metadata": {
-      "name": "mainnet-practice2-chain-api1",
-      "roles": "Api"
-    }
-  },
-  {
-    "publicKey": "7F6B6FA98CC59DC18E8BE879CFC5CD36C047238DF138DF5F2DCC0CA54B59D1BC",
-    "endpoint": {
-      "host": "bctestnet2.brimstone.xpxsirius.io",
-      "port": 7900
-    },
-    "metadata": {
-      "name": "mainnet-practice2-chain-api2",
-      "roles": "Api"
-    }
-  },
-  {
-    "publicKey": "92F1A6D6D1B21BFC0CA5990D93DC628595680163BE64D89C932030FCAE8748F8",
-    "endpoint": {
-      "host": "bctestnet3.brimstone.xpxsirius.io",
-      "port": 7900
-    },
-    "metadata": {
-      "name": "mainnet-practice2-chain-api3",
-      "roles": "Api"
-    }
-  },
-  {
-    "publicKey": "2B1CEC4D3192ADAD880DC39F679E3C0B512D3F07E7D54E70E119A0CB898CE2E3",
-    "endpoint": {
-      "host": "bctestnetswap.xpxsirius.io",
-      "port": 7900
-    },
-    "metadata": {
-      "name": "bctestnet",
-      "roles": "Api"
-    }
-  }
-  ]
+    "_info": "this file contains a list of api peers",
+    "knownPeers": [{
+            "publicKey": "3BDBE9E49DD64F4DDE855F096805823B695B11EA48D046508DD345F4B9FE4ADE",
+            "endpoint": {
+                "host": "api-1.testnet2.xpxsirius.io",
+                "port": 7900
+            },
+            "metadata": {
+                "name": "testnet2-api-1",
+                "roles": "Api"
+            }
+        }
+    ]
 }
