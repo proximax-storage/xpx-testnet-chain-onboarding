@@ -1,8 +1,9 @@
 package main
 
 import (
+    "errors"
 	"context"
-	"golang.org/x/crypto/ssh/terminal"
+	// "golang.org/x/crypto/ssh/terminal"
 	"fmt"
 	"os"
 	"time"
@@ -11,28 +12,35 @@ import (
 	"github.com/proximax-storage/go-xpx-chain-sdk/sdk"
 )
 
-const (
-    // Sirius-chain-api-rest server.
-    baseUrl = "http://bctestnet3.brimstone.xpxsirius.io:3000"
-)
+var apiNodes = []string{
+	"https://api-1.testnet2.xpxsirius.io",
+}
+
+var networkType sdk.NetworkType
+var config *sdk.Config
+var ctx context.Context
+var client *sdk.Client
+
+func init() {
+	var err error
+	ctx = context.Background()
+	baseUrl := selectApi()
+	config, err = sdk.NewConfig(ctx, []string{baseUrl})
+	if err != nil {
+		panic(err)
+	}
+	client = sdk.NewClient(nil,config)
+
+	networkType = config.NetworkType
+}
 
 func main() {
 	
 	fmt.Print("Enter your account private key: ")
-	accountPrivateKey, err := terminal.ReadPassword(0)
-	fmt.Println("")
-	if err != nil {
-		fmt.Printf("Input error: %s", err)
-	}
-
-	conf, err := sdk.NewConfig(context.Background(), []string{baseUrl})
-    if err != nil {
-        fmt.Printf("NewConfig returned error: %s", err)
-        return
-    }
+	accountPrivateKey := promptPrivateKey()
 
     // Use the default http client
-    client := sdk.NewClient(nil, conf)
+    client := sdk.NewClient(nil, config)
 
 	account, err := client.NewAccountFromPrivateKey(string(accountPrivateKey))
     if err != nil {
@@ -93,6 +101,18 @@ func main() {
 	
 }
 
+func selectApi() string {
+	prompt := promptui.Select{
+		Label: "Select API Node",
+		Items: apiNodes,
+	}
+	_, result, err := prompt.Run()
+	if err != nil {
+		fmt.Printf("Select failed %\v\n", err)
+	}
+	return result
+}
+
 func yesNo() bool {
     prompt := promptui.Select{
         Label: "[Yes/No]",
@@ -103,4 +123,25 @@ func yesNo() bool {
         fmt.Println("Prompt failed %v\n", err)
     }
     return result == "Yes"
+}
+
+func promptPrivateKey() string {
+
+    validate := func(input string) error {
+		if len(input) != 64 {
+			return errors.New("Key must be 64 characters")
+		}
+		return nil
+    }
+    
+    prompt := promptui.Prompt{
+        Label: "Private Key",
+        Validate: validate,
+        Mask: '*',
+    }
+    result, err := prompt.Run()
+    if err != nil {
+		fmt.Printf("Prompt failed %v\n", err)
+    }
+    return result
 }
