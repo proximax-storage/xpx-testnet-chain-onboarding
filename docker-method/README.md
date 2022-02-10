@@ -72,6 +72,7 @@ roles = Peer
 
 You may activate your account for delegated validating by running the following tool:
 ```
+$ chmod +x tools/delegate_harvesting_testnet
 $ tools/delegate_harvesting_testnet
 ```
 
@@ -98,6 +99,7 @@ Please note that if your account does not have any XPX or previously linked to a
 
 ## Generate a keypair
 ```
+chmod +x tools/generate_key_pair
 tools/generate_key_pair
 ```
 
@@ -118,6 +120,7 @@ pluginsDirectory =
 
 ## Start the Peer Node
 ```
+$ chmod +x entrypoint.sh
 $ docker-compose up -d
 ```
 
