@@ -30,13 +30,13 @@ cd linux-storage-tool
 
 ## Initial set up
 
-1. Enter `Account name` and `Private Key`.  Click on `Generate Key` if you wish to use a new private key.  Please ensure the account has `XPX`.
+1. Enter `Account name` and `Private Key`.  Click on `Generate Key` if you wish to use a new private key.  Please ensure the account has `XPX`.  For testnet2, you can get `XPX` from the [faucet](https://bctestnet2faucet.xpxsirius.io)
 
 2. Enter the following information for settings:
 
-- REST Server Address: `api-2.testnet2.xpxsirius.io:3000`
+- REST Server Address: `18.142.186.205:3000`
 
-- Replicator Bootstrap Address: `genesis-p2p-2.testnet2.xpxsirius.io:7904`
+- Replicator Bootstrap Address: `13.213.19.108:7904`
 - Local UDP Port: `6846` (Default Port)
 - Account Name: **Select the Account Name is Step 1**
 - Download folder: **Click `Choose Directory` to select the directory you want to download files from drives**
