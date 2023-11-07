@@ -42,3 +42,11 @@ cd linux-storage-tool
 - Download folder: **Click `Choose Directory` to select the directory you want to download files from drives**
 - Fee Multiplier: `15000` (default fee multiplier for *Testnet2*)
 
+## Creating Drive
+
+1. In the main page, select `Drives` page tab.
+2. Click `+` to create a new Drive.
+3. Enter a name for the Drive you wish to create
+4. Replicator Number should be set to `4`.
+5. Max Drive Size (MB) should not be larger than 500MB.
+6. Click `Choose Directory` to select a local drive folder to sync with your storage drive.
