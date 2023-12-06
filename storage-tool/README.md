@@ -107,26 +107,4 @@ cd linux-storage-tool
 
 4. Notification will be received if download channel is created successfully.
 
-## Deploy a supercontract
-
-1. After uploading supercontract `(.wasm)` files to replicators, click on `Contracts` tab.
-
-2. Click on `Deployment` tab and enter the following information for deployment:
-
-- **Drive:** Select the drive created from the dropdwown
-- **Assignee:** A string of 64 charachters ex: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-- **File:** Enter the name of the main supercontract (.wasm) file to be executed first
-- **Function:** Enter the name of the function to be executed first
-- **Parameters:** Enter the parameters of the function mentioned `(optional)`
-- **Execution Call Payment:** Select a limit of `SC` units for one supercontract execution
-- **Download Call Payment:** Select a limit of `SM` units for one `SM` synchronization
-- **Automatic Executions Number:** Select an amount
-- **Automatic Executions File Name:** Enter the name of the auxiliary supercontract for automated executions
-- **Automatic Execution Function Name:** Enter the name of the function to be executed if the auxiliary supercontract requirement is met
-- **Automatic Execution Call Payment:** Select a limit of `SC` units for one automated supercontract execution
-- **Automatic Download Call Payment:** Select a limit of `SM` units for one `SM` synchronization
-
-3. Click on `Deploy` to deploy supercontract.
-
-**Note**: Function names does not include parentheses. e.g.: Enter `run` instead of `run()`.
 
