@@ -37,7 +37,7 @@ cd linux-storage-tool
 
 - REST Server Address: `13.235.254.237:3000`
 
-- Replicator Bootstrap Address: `13.213.19.108:7904`
+- Replicator Bootstrap Address: `13.213.19.108:7904` OR `18.142.186.205:3000`
 - Local UDP Port: `6846` (Default Port)
 - Account Name: Select the `Account Name` from Step 1
 - Download folder: Click `Choose Directory` to select the directory you want to download files to from drives
