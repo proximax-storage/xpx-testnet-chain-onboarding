@@ -52,7 +52,7 @@ cd linux-storage-tool
 2. Enter the following information for Create Drive prompt:
 
 - **Name:** Name of the drive
-- **Replicator Number:** Enter the number of replicators (minimum of 1 and maximum of 4)
+- **Replicator Number:** Enter the number of replicators (minimum of 4)
 - **Max Drive Size:** Enter a size below 500 MB
 - **Local Drive Folder:** Click `Choose Directory` to select the directory you want the local drive to be located
 
