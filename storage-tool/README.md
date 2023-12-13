@@ -95,7 +95,7 @@ cd linux-storage-tool
 
 3. Click the `>>` button in the middle to download the selected files.
 
-4. Open the Download folder configured during the Initial Set Up to view the downloaded files.
+4. Open the Download folder configured during Initial Set Up to view the downloaded files.
 
 ## Delete Download channel
 
@@ -105,6 +105,6 @@ cd linux-storage-tool
 
 3. Press the `confirm` button in the confirmation prompt.
 
-4. Notification will be received if download channel is created successfully.
+4. Notification will be received if download channel is deleted successfully.
 
 
