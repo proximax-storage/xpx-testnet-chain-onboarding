@@ -99,7 +99,7 @@ cd linux-storage-tool
 
 ## Delete Download channel
 
-1. Under the `Downloads` tab, select the download channel that you wish to delete from the dropdown menu next to `Channels`.
+1. Under the `Downloads` tab, select the download channel to delete from the dropdown menu next to `Channels`.
 
 2. Click the `-` button under `Downloads` tab.
 
