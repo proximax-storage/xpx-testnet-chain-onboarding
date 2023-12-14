@@ -40,7 +40,7 @@ cd linux-storage-tool
 - Replicator Bootstrap Address: `13.213.19.108:7904`
 - Local UDP Port: `6846` (Default Port)
 - Account Name: Select the `Account Name` from Step 1
-- Download folder: Click `Choose Directory` to select the directory you want to download files to from drives
+- Download folder: Click `Choose Directory` to select the directory where you want the files from drives to be downloaded to
 - Fee Multiplier: `15000` (default fee multiplier for *Testnet2*)
 
 4. Click on `Save` to save your configurations.
@@ -58,7 +58,7 @@ cd linux-storage-tool
 
 ## Delete drive
 
-1. From the dropdown on the left panel in `Drives` tab, select the name of the drive to be deleted.
+1. From the dropdown on the left panel under `Drives` tab, select the name of the drive to be deleted.
 
 2. Click the `-` button in `Drives` tab to delete drive.
 
@@ -89,22 +89,22 @@ cd linux-storage-tool
 
 ## Download files
 
-1. In the `Downloads` tab select the download channels to download files from from the dropdown menu next to Channels
+1. Under the `Downloads` tab, select the download channel from the dropdown menu next to `Channels` to download files.
 
-2. In the `Downloads` tab on the left panel select the files to be downloaded by ticking the checkboxes.
+2. Select the files to be downloaded by ticking the checkboxes on the left panel of the `Downloads` tab.
 
 3. Click the `>>` button in the middle to download the selected files.
 
-4. Open the Download folder configured in iniitial set up to view the downloaded files.
+4. Open the Download folder configured during Initial Set Up to view the downloaded files.
 
 ## Delete Download channel
 
-1. In the `Downloads` tab select the download channel to delete from from the dropdown menu next to Channels.
+1. Under the `Downloads` tab, select the download channel to delete from the dropdown menu next to `Channels`.
 
-2. Click the `-` button in `Downloads` tab.
+2. Click the `-` button under `Downloads` tab.
 
 3. Press the `confirm` button in the confirmation prompt.
 
-4. Notification will be received if download channel is created successfully.
+4. Notification will be received if download channel is deleted successfully.
 
 
