@@ -110,5 +110,7 @@ cd linux-storage-tool
 ## Tools
 
 [Faucet](https://bctestnet2faucet.xpxsirius.io)
+
 [Explorer](https://bctestnetexplorer.xpxsirius.io)
+
 [Wallet](https://bctestnetwallet.xpxsirius.io)
