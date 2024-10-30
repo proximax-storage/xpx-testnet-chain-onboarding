@@ -107,4 +107,8 @@ cd linux-storage-tool
 
 4. Notification will be received if download channel is deleted successfully.
 
+## Tools
 
+[Faucet](https://bctestnet2faucet.xpxsirius.io)
+[Explorer](https://bctestnetexplorer.xpxsirius.io)
+[Wallet](https://bctestnetwallet.xpxsirius.io)
